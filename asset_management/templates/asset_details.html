@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asset Details</title>
+<link rel="stylesheet" href="{% static 'asset_details.css' %}">
+</head>
+<body>
+<div class="page-container">
+  <div class="header">
+  <div class="button"><a href="/assigned-assets">Back</a></div>
+  <div class="title">Asset Details</div>
+  <div class="welcome-message">Welcome {{ user.username }}!</div>
+  </div>
+  <table class="asset-details-table">
+    <tr>
+      <th>Asset Name</th>
+      <td>{{ asset.name }}</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td>{{ asset.description }}</td>
+    </tr>
+    <tr>
+      <th>Barcode ID</th>
+      <td>{{ asset.barcode }}</td>
+    </tr>
+    <tr>
+      <th>Assigned To</th>
+      <td>{{ asset.assigned_to.username }}</td>
+    </tr>
+    <tr>
+      <th>Checkout Date</th>
+      <td>{{ asset.checkout_date|date:"d/m/Y" }}</td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
